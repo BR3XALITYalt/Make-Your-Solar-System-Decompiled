@@ -1,0 +1,3608 @@
+{
+  "Files": [
+    {
+      "Name": "6f4bb16860cbd414eb5d61e692a42b4c",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "transparentPixel",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "8209e3e80bfd79f45a2b40e4c4425271",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "StarsColors",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "ef4c706c42e296340ac9acdd51444636",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Planet044",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "96c7f36203006f4499f7da51fa6a79e9",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Planet041",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "c71ab509fc2ac754bb305a2ab822aefa",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Planet040",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "3bd7e0d920dad524e94eedd380e34bd1",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Planet039",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "442d6870e5f5f654cba4a8819315d612",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Planet038",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "6d582721019a9cd40b5d88f03b6cf99a",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Planet037",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "f18321154535f6841a451ade52a6de13",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Planet036",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "3187cc50a6f7bea439b7724d6d570bc9",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Planet035",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "b0c63a9278decb443a5082f742fec018",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Planet034",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "45830b456ca889449b96e1625b274e2c",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Planet033",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "071192c8e157d6e4ba75e00f5dd00c55",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Planet032",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "430ac636fbba69d42a4ed1557fee9fb7",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Planet031",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "bdbef182b1e681e48b56997258bb7e51",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Planet030",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "10c83434f9c61214d99516ff2992b095",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Planet029",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "a61ecd33b926eec4b8c7c4db692c9aee",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Planet028",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "fe2d01daa12241446ac7d11cae50e48f",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Planet027",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "572420290e32cd645813e97b9b3166ef",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Planet026",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "dee68d99737edf44f8ba229901c1226c",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Planet025",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "143d4dc044082ed47ad9cc39b0bc9603",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Planet024",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "74c268b3923bc6c4ca0d3508d4d6c5d9",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Planet023",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "9576c2d7d9fa9f44b9b188c82a88ab28",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Planet022",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "e3976d6d85f54f947b096fc5b9b3313b",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Planet021",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "df98457d4a5cd4d42abbfce00d661b69",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Planet020",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "08d74a5c14e8c8841a3561e501c6de53",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Planet019",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "c79144290628819449f5e63c528bacfe",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Planet018",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "a580945c30eb81b408f66ee5d5e3c5d3",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Planet016",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "480019ac58a57d547bbb612e6e953025",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Planet015",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "5493206c7f4679741afc0d53060587d0",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Planet014",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "94f39b38072feb94ea15e3f3f3a71f18",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Planet012",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "ef68f897caefdad498bea8750d356f7e",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Planet011",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "3acfb701b1c28284db8a4a9d9847ca6c",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Planet010",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "39d8c5fee0129dd4392eef82e8131d6d",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Planet009",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "60962b4b47058eb40a68e76168dae0a9",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Planet008",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "8b30411998ccea64f96a406da33c5c29",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Planet007",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "9996424fca57b16439b5c06900293e7f",
+      "Assets": []
+    },
+    {
+      "Name": "feda46cfe672b9e4b9162f1f9a1ef269",
+      "Assets": []
+    },
+    {
+      "Name": "4daa670316ef6a64e910eb9b8a4e3b77",
+      "Assets": []
+    },
+    {
+      "Name": "316c975ef3aa32d4fb1d482143662406",
+      "Assets": []
+    },
+    {
+      "Name": "92a003cb2377d7042991bc98082227d7",
+      "Assets": []
+    },
+    {
+      "Name": "924013eb7b07b874f8c14b17af7d8441",
+      "Assets": []
+    },
+    {
+      "Name": "9ccc21eef19f14148b4f7f5568388d39",
+      "Assets": []
+    },
+    {
+      "Name": "b86d7505ae78a3141a78ca4a51a6f7fe",
+      "Assets": []
+    },
+    {
+      "Name": "e50177cd41fabd149a83cd88d46aefef",
+      "Assets": []
+    },
+    {
+      "Name": "98a6cbbdc51166b4da52329607823f56",
+      "Assets": []
+    },
+    {
+      "Name": "d5175b9c344fa1c468397f86e48448f6",
+      "Assets": []
+    },
+    {
+      "Name": "6615a8b33e697ef4497bfdabf8773dd1",
+      "Assets": []
+    },
+    {
+      "Name": "fe0cef144a909c34ea10e180b59a94bc",
+      "Assets": []
+    },
+    {
+      "Name": "100916e5d463ea948b490405ce7b0534",
+      "Assets": []
+    },
+    {
+      "Name": "3fd18d84fa555364da24b9b0e8c1800f",
+      "Assets": []
+    },
+    {
+      "Name": "f6d4c36055359fc4188885b329cff34f",
+      "Assets": []
+    },
+    {
+      "Name": "3c640b767d061604888ecb23eb56f3ef",
+      "Assets": []
+    },
+    {
+      "Name": "2ca950feefb0c514080af77e5c5d4da2",
+      "Assets": []
+    },
+    {
+      "Name": "97522a7498fa0cf468758b5c6fa9ce31",
+      "Assets": []
+    },
+    {
+      "Name": "2a0575510e63376499f63fd1da251109",
+      "Assets": []
+    },
+    {
+      "Name": "7a48d58c89666c94db76674542238d75",
+      "Assets": []
+    },
+    {
+      "Name": "fd32c955695857848abe03936f89a8c6",
+      "Assets": []
+    },
+    {
+      "Name": "604fbdf9ef4f5eb41b70a8e2bfd2b025",
+      "Assets": []
+    },
+    {
+      "Name": "2a0c3bcb32b70094bae824cac91c115d",
+      "Assets": []
+    },
+    {
+      "Name": "8070aaa607810574ab69ff4002481f27",
+      "Assets": []
+    },
+    {
+      "Name": "9a451cb5fb5d85b45850fccbcf561f0c",
+      "Assets": []
+    },
+    {
+      "Name": "e0264432f4dcc5549adc37d670b7ac7b",
+      "Assets": []
+    },
+    {
+      "Name": "fcd084ee7c2730347af1d2d79bc6373c",
+      "Assets": []
+    },
+    {
+      "Name": "4d28f958144e18a459872aa2e5af3ab3",
+      "Assets": []
+    },
+    {
+      "Name": "c01d07bddef72554f90ef22c23085c13",
+      "Assets": []
+    },
+    {
+      "Name": "8cb550ca42ce08140b21dfb63a8317d1",
+      "Assets": []
+    },
+    {
+      "Name": "e12bc58662d053b4c8604a7ded142abf",
+      "Assets": []
+    },
+    {
+      "Name": "7391939fb2dd5f2459c2291a23237c5d",
+      "Assets": []
+    },
+    {
+      "Name": "2e4f0028d2637d34f923f7e238552f44",
+      "Assets": []
+    },
+    {
+      "Name": "476ad5cbecc9ce1418fb449d0411a831",
+      "Assets": []
+    },
+    {
+      "Name": "1f1e6d5edfcc0d041acb6b3346d3ed6b",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "blackPixel",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "8fbd4c790bb084b43b64f9b67134c387",
+      "Assets": []
+    },
+    {
+      "Name": "8c1cd489d63df0042b5b6dfc22581930",
+      "Assets": []
+    },
+    {
+      "Name": "9a50f580df767ec43ac50f9ac2b5659c",
+      "Assets": []
+    },
+    {
+      "Name": "8a919b307c8fe8e449cef8a78ca6132e",
+      "Assets": []
+    },
+    {
+      "Name": "004716fd4873297419a7f60a44b085a2",
+      "Assets": []
+    },
+    {
+      "Name": "d6b198b3d972391408bf1dcdbaee941e",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_48",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "56478f837c789e14ea59834f3ac42bb8",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_47",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "ea98b22ade9e3d34e9628071983a8022",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_46",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "8a53ba5b76e9d69439b9b412be1787a1",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_45",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "abc92cbcf45d76c49a526cb002cc5357",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_44",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "f305a31463062714a84a78a1de4f2db0",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_43",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "fce1bc7ad6d6384448e4e4736f0c11b0",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_42",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "517c9fa19607b034e8914ad02a64a3ae",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_41",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "13b938ce437342942a65ecbcab872317",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_40",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "9447e1ca548077b4d9e55f2e6eea20f0",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_39",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "424c72374d0a0414fa350eb1c6fd1328",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_38",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "5db094621f73e0141a18b0c8217890f5",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_37",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "0994549e0460ab2479fe4545a6cfcf35",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_36",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "72af1d13e1d0e5e4e8171257104f838d",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_35",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "903fa0dadce7e3a448827018dad55a60",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_34",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "77f52b411d8c81e429643a5b10ae80ed",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_33",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "b94471c761349734dbe0f00eda82125d",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_32",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "01ed42fdf628f38408e57144cddca7c4",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_31",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "c80afa4a3cee8824691f333dce1fe2ba",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_30",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "0a09742063f020446878363b2ac32276",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_29",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "1375368e9bee0154884de785e99e776f",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_28",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "1b2e37f0ff0849e459bd0c2208d580f0",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_27",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "50ebadd5819c1874181ec3434b731e97",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_26",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "f33e75910ca920f4f85995151d4b488a",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_25",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "be0572fcefcad2344b5b75c3c7bbcd74",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_24",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "182e026bdb7875a4ab01330726d324d0",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_23",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "eda05f238a3bd314595cde1012f49373",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_22",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "8fa3ce3dd81de004cbd5cbc46cddaa65",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_21",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "ebc965cd464be4e4c8de407ee757cff9",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_20",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "824f8ee676d1e9342b67a4180afbd68c",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_19",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "0438b743cba9a8849bec877ba0ddce18",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_18",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "66f31baf66e404d4aa90f8fef4e08741",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_17",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "fd6501f226e2ff343805ded45fd4b994",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_16",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "70e39413069b1bd439ed5eb9b3e523f9",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_15",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "e5d5c416ff8d40e4ba91e597319a088c",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_14",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "66f5da338c65b484785619c29a8c764b",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_13",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "7a3ed2f772afe5d4c85fc716ff5dbe68",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_12",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "3cf702743c3929649aaf53c0c89a2b36",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_11",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "7fb2a99eb62e60544954905257ce6cdf",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_10",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "0248d75db225a254b8931d07bba46948",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_09",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "c2ade8f123a04364a97b5e4263d6f649",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_08",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "723dfff2289a21c43be2cb347d83743f",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_07",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "3e65f08754cee1649b6c7cb466f1d21e",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_06",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "d7b80fcd64c3c6b4ebb1d90be438b401",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_05",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "46717c750501fd94396ffc2e17c92f50",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_04",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "a4cbfaf165ba8124d908a5ae259a1b16",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_03",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "5b019e992864a6a4e8ec6fee4824ae7d",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_02",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "67373c8d8745e4842bd3f61132e8d059",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "luma_01",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "040cb97d24aec4450912246d82eda9cf",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "languageBackground",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "fc62798658afe8546a212e273576f168",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Language.es",
+          "Type": "TextAsset"
+        }
+      ]
+    },
+    {
+      "Name": "4e50637c4f27de144a2e661a5a529bc7",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Language.en",
+          "Type": "TextAsset"
+        }
+      ]
+    },
+    {
+      "Name": "ae999da83ff0b6242a77dc1846cb62c0",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Language",
+          "Type": "TextAsset"
+        }
+      ]
+    },
+    {
+      "Name": "d51abd02ebb9d6d4d8f75f6c70cb6744",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "white",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "88566967c4d419c4a9370b196ee38d2d",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "tabellaBump",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "0ee40142633e08a479cbda2618c38b06",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "tabella",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "e564e1de432340a4d9565f45d15211d5",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "gearB",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "cc714adb622101f40befb550d13c51b7",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "gear",
+          "Type": "Texture2D"
+        }
+      ]
+    },
+    {
+      "Name": "705ec34ed9e5f4526b0bcd4ced11390f",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "EmptyResourceHeader",
+          "Type": "TextAsset"
+        }
+      ]
+    },
+    {
+      "Name": "a6d6040d1cf51c6429cd2c2d4439f8ca",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "AvailableCultures",
+          "Type": "TextAsset"
+        }
+      ]
+    },
+    {
+      "Name": "sharedassets0.assets",
+      "Assets": [
+        {
+          "PathID": 18,
+          "Name": "UISprite",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 19,
+          "Name": "Background",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 20,
+          "Name": "Font Texture",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 21,
+          "Name": "blueBG2",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 22,
+          "Name": "div2",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 23,
+          "Name": "ic_menu_white_48dp",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 24,
+          "Name": "MySliderFill2",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 25,
+          "Name": "Planet000",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 26,
+          "Name": "neutron",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 27,
+          "Name": "Planet002",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 28,
+          "Name": "ic_public_white_48dp",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 29,
+          "Name": "div",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 30,
+          "Name": "Planet017",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 31,
+          "Name": "ic_videocam_white_48dp",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 32,
+          "Name": "Planet005",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 33,
+          "Name": "Planet006",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 34,
+          "Name": "Planet001",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 35,
+          "Name": "windowSmooth",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 36,
+          "Name": "barycenter",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 37,
+          "Name": "Planet013",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 38,
+          "Name": "windowSmoothSmall",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 39,
+          "Name": "Planet042",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 40,
+          "Name": "Planet003",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 41,
+          "Name": "Planet043",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 42,
+          "Name": "Planet004",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 43,
+          "Name": "MyHandleBase",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 44,
+          "Name": "Mobile-VertexLit",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 45,
+          "Name": "Mobile-Lightmap-Unlit",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 46,
+          "Name": "Unlit-Color",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 47,
+          "Name": "Stencil",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 48,
+          "Name": "Vectorscape",
+          "Type": "AudioClip"
+        },
+        {
+          "PathID": 49,
+          "Name": "GlassHitScroll6",
+          "Type": "AudioClip"
+        },
+        {
+          "PathID": 50,
+          "Name": "Medium Idea 11",
+          "Type": "AudioClip"
+        },
+        {
+          "PathID": 51,
+          "Name": "planetSelect",
+          "Type": "AudioClip"
+        },
+        {
+          "PathID": 52,
+          "Name": "Nice idea 06",
+          "Type": "AudioClip"
+        },
+        {
+          "PathID": 53,
+          "Name": "Error 1",
+          "Type": "AudioClip"
+        }
+      ]
+    },
+    {
+      "Name": "0000000000000000f000000000000000",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "Normal-Glossy",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 2,
+          "Name": "Normal-BumpSpec",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 3,
+          "Name": "Alpha-BumpSpec",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 4,
+          "Name": "Alpha-VertexLit",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 5,
+          "Name": "Unlit-Normal",
+          "Type": "Shader"
+        }
+      ]
+    },
+    {
+      "Name": "unity_builtin_extra",
+      "Assets": [
+        {
+          "PathID": 6,
+          "Name": "Normal-VertexLit",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 7,
+          "Name": "Normal-Diffuse",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 63,
+          "Name": "Internal-PrePassLighting",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 69,
+          "Name": "Internal-DeferredShading",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 74,
+          "Name": "Internal-DeferredReflections",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 10770,
+          "Name": "UI-Default",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 10782,
+          "Name": "UI-DefaultFont",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 15104,
+          "Name": "CubeBlur",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 15105,
+          "Name": "CubeCopy",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 15106,
+          "Name": "CubeBlend",
+          "Type": "Shader"
+        }
+      ]
+    },
+    {
+      "Name": "unity default resources",
+      "Assets": [
+        {
+          "PathID": 17,
+          "Name": "Internal-ErrorShader",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 62,
+          "Name": "Camera-DepthNormalTexture",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 64,
+          "Name": "Internal-PrePassCollectShadows",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 65,
+          "Name": "Internal-CombineDepthNormals",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 66,
+          "Name": "Internal-BlitCopy",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 68,
+          "Name": "Internal-Clear",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 69,
+          "Name": "Internal-Colored",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 70,
+          "Name": "Internal-SplashShadowCaster",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 71,
+          "Name": "Internal-SplashShadowBlur",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 72,
+          "Name": "Internal-SplashShadowReceiver",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 73,
+          "Name": "Internal-SplashShadowReceiverSimple",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 102,
+          "Name": "Internal-Flare",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 105,
+          "Name": "Internal-Halo",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 9000,
+          "Name": "Internal-GUITextureClip",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 9001,
+          "Name": "Internal-GUITextureClipText",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 9002,
+          "Name": "Internal-GUITexture",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 9003,
+          "Name": "Internal-GUITextureBlit",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 10001,
+          "Name": "Soft",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 10101,
+          "Name": "Font",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 10103,
+          "Name": "Font Texture",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 10200,
+          "Name": "pSphere1",
+          "Type": "Mesh"
+        },
+        {
+          "PathID": 10202,
+          "Name": "Cube",
+          "Type": "Mesh"
+        },
+        {
+          "PathID": 10203,
+          "Name": "pCylinder1",
+          "Type": "Mesh"
+        },
+        {
+          "PathID": 10204,
+          "Name": "pPlane1",
+          "Type": "Mesh"
+        },
+        {
+          "PathID": 10205,
+          "Name": "polySurface2",
+          "Type": "Mesh"
+        },
+        {
+          "PathID": 10206,
+          "Name": "Cylinder",
+          "Type": "Mesh"
+        },
+        {
+          "PathID": 10207,
+          "Name": "Sphere",
+          "Type": "Mesh"
+        },
+        {
+          "PathID": 10208,
+          "Name": "Capsule",
+          "Type": "Mesh"
+        },
+        {
+          "PathID": 10209,
+          "Name": "Plane",
+          "Type": "Mesh"
+        },
+        {
+          "PathID": 10210,
+          "Name": "Quad",
+          "Type": "Mesh"
+        },
+        {
+          "PathID": 10211,
+          "Name": "Icosphere",
+          "Type": "Mesh"
+        },
+        {
+          "PathID": 10212,
+          "Name": "icosahedron",
+          "Type": "Mesh"
+        },
+        {
+          "PathID": 10213,
+          "Name": "pyramid",
+          "Type": "Mesh"
+        },
+        {
+          "PathID": 10400,
+          "Name": "UnityWatermark-small",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 10401,
+          "Name": "EscToExit_back",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 10402,
+          "Name": "EscToExit_Text",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 10403,
+          "Name": "UnitySplash-cube",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 10404,
+          "Name": "UnitySplash-text",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 10405,
+          "Name": "UnitySplash-free",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 10406,
+          "Name": "UnitySplashBack",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 10407,
+          "Name": "UnityWatermark-trial",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 10408,
+          "Name": "UnityWatermark-beta",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 10409,
+          "Name": "UnityWatermark-edu",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 10410,
+          "Name": "UnityWatermark-dev",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 10411,
+          "Name": "WarningSign",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 10413,
+          "Name": "UnityWatermark-proto",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 10414,
+          "Name": "UnityWatermarkPlugin-beta",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 10753,
+          "Name": "Sprites-Default",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 10755,
+          "Name": "FrameDebuggerRenderTargetDisplay",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 11001,
+          "Name": "box",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 11002,
+          "Name": "button active",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 11003,
+          "Name": "button hover",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 11004,
+          "Name": "button on hover",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 11005,
+          "Name": "button on",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 11006,
+          "Name": "button",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 11007,
+          "Name": "horizontal scrollbar thumb",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 11008,
+          "Name": "horizontal scrollbar",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 11009,
+          "Name": "horizontalslider",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 11010,
+          "Name": "slider thumb active",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 11011,
+          "Name": "slider thumb",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 11012,
+          "Name": "slidert humb hover",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 11013,
+          "Name": "toggle active",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 11014,
+          "Name": "toggle hover",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 11015,
+          "Name": "toggle on hover",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 11016,
+          "Name": "toggle on",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 11017,
+          "Name": "toggle on active",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 11018,
+          "Name": "toggle",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 11019,
+          "Name": "vertical scrollbar thumb",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 11020,
+          "Name": "vertical scrollbar",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 11021,
+          "Name": "verticalslider",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 11022,
+          "Name": "window on",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 11023,
+          "Name": "window",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 11024,
+          "Name": "textfield",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 11025,
+          "Name": "textfield on",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 11026,
+          "Name": "textfield hover",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 11998,
+          "Name": "DeveloperConsole",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 11999,
+          "Name": "UserAuthorizationDialog",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 12001,
+          "Name": "GUISkin",
+          "Type": "MonoScript"
+        }
+      ]
+    },
+    {
+      "Name": "globalgamemanagers.assets",
+      "Assets": [
+        {
+          "PathID": 9,
+          "Name": "supernova",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 10,
+          "Name": "luma_00",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 11,
+          "Name": "impact_piece",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 12,
+          "Name": "puffy_sm",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 13,
+          "Name": "sun_texture_BW",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 14,
+          "Name": "whitePixel",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 15,
+          "Name": "lightSprite",
+          "Type": "Texture2D"
+        },
+        {
+          "PathID": 16,
+          "Name": "Illumin-Diffuse",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 17,
+          "Name": "Illumin-VertexLit",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 18,
+          "Name": "",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 19,
+          "Name": "Mobile-Particle-Add",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 20,
+          "Name": "Mobile-Particle-Alpha",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 21,
+          "Name": "Circle",
+          "Type": "Shader"
+        },
+        {
+          "PathID": 22,
+          "Name": "Explosion_04",
+          "Type": "AudioClip"
+        },
+        {
+          "PathID": 23,
+          "Name": "planetOut 1",
+          "Type": "AudioClip"
+        },
+        {
+          "PathID": 24,
+          "Name": "149966__nenadsimic__muffled-distant-explosion",
+          "Type": "AudioClip"
+        },
+        {
+          "PathID": 25,
+          "Name": "83940__schnaffon__explosion-sourde2",
+          "Type": "AudioClip"
+        },
+        {
+          "PathID": 26,
+          "Name": "GridLayoutGroup",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 27,
+          "Name": "Scrollbar",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 28,
+          "Name": "EventTrigger",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 29,
+          "Name": "UnityAdsEditorPlaceholder",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 30,
+          "Name": "BaseInputModule",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 31,
+          "Name": "NetworkTransform",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 32,
+          "Name": "Physics2DRaycaster",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 33,
+          "Name": "NetworkDiscovery",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 34,
+          "Name": "MaskableGraphic",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 35,
+          "Name": "LocalizedGUIText",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 36,
+          "Name": "BaseRaycaster",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 37,
+          "Name": "NetworkBehaviour",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 38,
+          "Name": "NetworkTransformChild",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 39,
+          "Name": "AspectRatioFitter",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 40,
+          "Name": "PointerInputModule",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 41,
+          "Name": "Mask",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 42,
+          "Name": "ToggleGroup",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 43,
+          "Name": "NetworkStartPosition",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 44,
+          "Name": "Outline",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 45,
+          "Name": "NetworkLobbyManager",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 46,
+          "Name": "NetworkTransformVisualizer",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 47,
+          "Name": "NetworkManager",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 48,
+          "Name": "PhysicsRaycaster",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 49,
+          "Name": "Image",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 50,
+          "Name": "EventSystem",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 51,
+          "Name": "LanguageManager",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 52,
+          "Name": "LayoutGroup",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 53,
+          "Name": "LocalizedGUITexture",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 54,
+          "Name": "HorizontalLayoutGroup",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 55,
+          "Name": "Selectable",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 56,
+          "Name": "RectMask2D",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 57,
+          "Name": "Slider",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 58,
+          "Name": "RawImage",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 59,
+          "Name": "ConversionUtils",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 60,
+          "Name": "NativeQuestClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 61,
+          "Name": "AssemblyInfo",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 62,
+          "Name": "BaseReferenceHolder",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 63,
+          "Name": "BloomAndFlares",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 64,
+          "Name": "IRewardBasedVideoAdClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 65,
+          "Name": "DefaultInAppPurchaseListener",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 66,
+          "Name": "_3Visio_Shape",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 67,
+          "Name": "JavaUtils",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 68,
+          "Name": "IDefaultInAppPurchaseProcessor",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 69,
+          "Name": "IClientImpl",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 70,
+          "Name": "InterstitialClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 71,
+          "Name": "NativeRealTimeRoom",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 72,
+          "Name": "PlayerStats",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 73,
+          "Name": "QuestManager",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 74,
+          "Name": "QuestMilestone",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 75,
+          "Name": "IosPlatformConfiguration",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 76,
+          "Name": "NativeLeaderboard",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 77,
+          "Name": "IOSTokenClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 78,
+          "Name": "PlayGamesClientConfiguration",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 79,
+          "Name": "InAppPurchaseResult",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 80,
+          "Name": "Types",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 81,
+          "Name": "Triangles",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 82,
+          "Name": "CustomNativeEventArgs",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 83,
+          "Name": "CameraInfoTextFromCamera",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 84,
+          "Name": "NearbyConnectionsBuilder",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 85,
+          "Name": "IAdLoaderClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 86,
+          "Name": "RealTimeRoomConfigBuilder",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 87,
+          "Name": "CommonTypes",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 88,
+          "Name": "AdPosition",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 89,
+          "Name": "NativeAchievement",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 90,
+          "Name": "ColorCorrectionCurves",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 91,
+          "Name": "NativeScore",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 92,
+          "Name": "Reward",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 93,
+          "Name": "Grayscale",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 94,
+          "Name": "GameServices",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 95,
+          "Name": "IQuest",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 96,
+          "Name": "NativeScorePageToken",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 97,
+          "Name": "Invitation",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 98,
+          "Name": "GameController",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 99,
+          "Name": "RealTimeEventListenerHelper",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 100,
+          "Name": "PlayGamesScore",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 101,
+          "Name": "DummyClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 102,
+          "Name": "MessageListenerHelper",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 103,
+          "Name": "PendingResult",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 104,
+          "Name": "Externs",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 105,
+          "Name": "NearbyConnections",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 106,
+          "Name": "RealtimeRoomConfig",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 107,
+          "Name": "EventManager",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 108,
+          "Name": "Quest",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 109,
+          "Name": "ContrastEnhance",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 110,
+          "Name": "PInvokeUtilities",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 111,
+          "Name": "Blur",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 112,
+          "Name": "MapButton",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 113,
+          "Name": "TurnBasedMatchConfigBuilder",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 114,
+          "Name": "Utils",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 115,
+          "Name": "JavaObjWrapper",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 116,
+          "Name": "PlayGamesLocalUser",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 117,
+          "Name": "ParticipantResults",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 118,
+          "Name": "MonoPInvokeCallbackAttribute",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 119,
+          "Name": "ScorePageToken",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 120,
+          "Name": "RealTimeRoom",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 121,
+          "Name": "SnapshotManager",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 122,
+          "Name": "ResultCallbackProxy",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 123,
+          "Name": "RealTimeMultiplayerListener",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 124,
+          "Name": "ScorePage",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 125,
+          "Name": "PlayerManager",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 126,
+          "Name": "PlayGamesClientFactory",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 127,
+          "Name": "GameServices",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 128,
+          "Name": "PluginVersion",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 129,
+          "Name": "NativeClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 130,
+          "Name": "IInterstitialClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 131,
+          "Name": "Fisheye",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 132,
+          "Name": "RealtimeManager",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 133,
+          "Name": "MotionBlur",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 134,
+          "Name": "AchievementManager",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 135,
+          "Name": "BloomOptimized",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 136,
+          "Name": "AndroidClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 137,
+          "Name": "IQuestsClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 138,
+          "Name": "ResultCallback",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 139,
+          "Name": "Event",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 140,
+          "Name": "PostEffectsHelper",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 141,
+          "Name": "RealTimeMultiplayerManager",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 142,
+          "Name": "NativeNearbyConnectionsClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 143,
+          "Name": "InAppPurchase",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 144,
+          "Name": "ICustomNativeTemplateClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 145,
+          "Name": "AndroidPlatformConfiguration",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 146,
+          "Name": "SnapshotMetadata",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 147,
+          "Name": "CustomNativeTemplateClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 148,
+          "Name": "SL_NGUILabel",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 149,
+          "Name": "DummyClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 150,
+          "Name": "NativeScoreEntry",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 151,
+          "Name": "CustomNativeTemplateClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 152,
+          "Name": "BannerView",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 153,
+          "Name": "ISavedGameClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 154,
+          "Name": "NativeScorePage",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 155,
+          "Name": "SavedGameMetadataUpdate",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 156,
+          "Name": "SunShafts",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 157,
+          "Name": "InterstitialClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 158,
+          "Name": "IBannerClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 159,
+          "Name": "GoogleMobileAdsClientFactory",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 160,
+          "Name": "TurnBasedMatch",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 161,
+          "Name": "IInAppPurchaseResult",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 162,
+          "Name": "Antialiasing",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 163,
+          "Name": "NativeConnectionResponse",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 164,
+          "Name": "IosPlatformConfiguration",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 165,
+          "Name": "Temperature",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 166,
+          "Name": "NativeTurnBasedMultiplayerClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 167,
+          "Name": "AndroidTokenClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 168,
+          "Name": "IRealTimeMultiplayerClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 169,
+          "Name": "Result",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 170,
+          "Name": "NativeScoreSummary",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 171,
+          "Name": "Utils",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 172,
+          "Name": "LoadAllLanguages",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 173,
+          "Name": "GooglePlayGamesMYSS",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 174,
+          "Name": "AdRequest",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 175,
+          "Name": "ScreenOverlay",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 176,
+          "Name": "TurnBasedMatchConfigBuilder",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 177,
+          "Name": "NativeEventClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 178,
+          "Name": "EdgeDetection",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 179,
+          "Name": "NativeEndpointDetails",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 180,
+          "Name": "ScreenSpaceAmbientObscurance",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 181,
+          "Name": "GlobalFog",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 182,
+          "Name": "CameraControl",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 183,
+          "Name": "NativePlayerStats",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 184,
+          "Name": "BannerClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 185,
+          "Name": "NativeNearbyConnectionClientFactory",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 186,
+          "Name": "SL_NGUISpriteAtlas",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 187,
+          "Name": "PlayGamesHelperObject",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 188,
+          "Name": "TurnBasedMatch",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 189,
+          "Name": "IEvent",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 190,
+          "Name": "NativeStartAdvertisingResult",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 191,
+          "Name": "BlurOptimized",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 192,
+          "Name": "Bloom",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 193,
+          "Name": "NativeQuestMilestone",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 194,
+          "Name": "NearbyConnectionsManager",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 195,
+          "Name": "StatsManager",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 196,
+          "Name": "MultiplayerInvitation",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 197,
+          "Name": "SymbolLocation",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 198,
+          "Name": "sun_luminance",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 199,
+          "Name": "DepthOfFieldDeprecated",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 200,
+          "Name": "CallbackUtils",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 201,
+          "Name": "Participant",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 202,
+          "Name": "LeaderboardManager",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 203,
+          "Name": "NativeSavedGameClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 204,
+          "Name": "TurnBasedMultiplayerManager",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 205,
+          "Name": "PlatformConfiguration",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 206,
+          "Name": "NearbyConnectionTypes",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 207,
+          "Name": "AdLoader",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 208,
+          "Name": "ParticipantResults",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 209,
+          "Name": "ImageEffects",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 210,
+          "Name": "ScoreSummary",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 211,
+          "Name": "TokenClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 212,
+          "Name": "ColorCorrectionLookup",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 213,
+          "Name": "DestroyedByBoundary2D",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 214,
+          "Name": "InterstitialAd",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 215,
+          "Name": "LeaderboardScoreData",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 216,
+          "Name": "IPlayGamesClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 217,
+          "Name": "NoiseAndGrain",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 218,
+          "Name": "MultiplayerInvitation",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 219,
+          "Name": "NativeExpressAdView",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 220,
+          "Name": "ITurnBasedMultiplayerClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 221,
+          "Name": "Achievement",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 222,
+          "Name": "AdvertisingResult",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 223,
+          "Name": "CommonErrorStatus",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 224,
+          "Name": "NearbyConnectionConfiguration",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 225,
+          "Name": "CameraMotionBlur",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 226,
+          "Name": "Builder",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 227,
+          "Name": "RewardBasedVideoAdClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 228,
+          "Name": "DummyNearbyConnectionClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 229,
+          "Name": "RealTimeRoomConfig",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 230,
+          "Name": "EndpointDetails",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 231,
+          "Name": "CustomInAppPurchaseListener",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 232,
+          "Name": "PlayGamesLeaderboard",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 233,
+          "Name": "SepiaTone",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 234,
+          "Name": "IQuestMilestone",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 235,
+          "Name": "RewardBasedVideoAdClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 236,
+          "Name": "Quads",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 237,
+          "Name": "TiltShift",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 238,
+          "Name": "NearbyConnectionsManagerBuilder",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 239,
+          "Name": "NativeSnapshotMetadata",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 240,
+          "Name": "VisibleGeometry",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 241,
+          "Name": "CustomNativeTemplateAd",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 242,
+          "Name": "GameInfo",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 243,
+          "Name": "NativeEvent",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 244,
+          "Name": "IOSClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 245,
+          "Name": "Player",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 246,
+          "Name": "NoiseAndScratches",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 247,
+          "Name": "Sentinels",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 248,
+          "Name": "JavaInterfaceProxy",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 249,
+          "Name": "SnapshotMetadataChangeBuilder",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 250,
+          "Name": "ISavedGameMetadata",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 251,
+          "Name": "Vortex",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 252,
+          "Name": "AndroidPlatformConfiguration",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 253,
+          "Name": "GoogleApiClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 254,
+          "Name": "PlayGamesUserProfile",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 255,
+          "Name": "MultiplayerParticipant",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 256,
+          "Name": "NearbyConnectionsStatus",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 257,
+          "Name": "NativeMessageListenerHelper",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 258,
+          "Name": "ConnectionResult",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 259,
+          "Name": "PanWM_sun_delete",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 260,
+          "Name": "ConnectionResponse",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 261,
+          "Name": "PlayerStats",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 262,
+          "Name": "RealTimeEventListenerHelper",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 263,
+          "Name": "translationUI",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 264,
+          "Name": "ScreenSpaceAmbientOcclusion",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 265,
+          "Name": "RealtimeRoomConfigBuilder",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 266,
+          "Name": "Achievement",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 267,
+          "Name": "NativeSnapshotMetadataChange",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 268,
+          "Name": "DrawPlanetVector",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 269,
+          "Name": "GameServicesBuilder",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 270,
+          "Name": "PostEffectsBase",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 271,
+          "Name": "NativePlayer",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 272,
+          "Name": "Status",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 273,
+          "Name": "Status",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 274,
+          "Name": "ICustomInAppPurchase",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 275,
+          "Name": "TurnBasedMatchConfig",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 276,
+          "Name": "TurnBasedManager",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 277,
+          "Name": "DepthOfField",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 278,
+          "Name": "Twirl",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 279,
+          "Name": "Score",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 280,
+          "Name": "SnapshotManager",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 281,
+          "Name": "GravitationalObject",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 282,
+          "Name": "Callbacks",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 283,
+          "Name": "PlayGamesPlatform",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 284,
+          "Name": "AdFailedToLoadEventArgs",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 285,
+          "Name": "Gender",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 286,
+          "Name": "INativeExpressAdClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 287,
+          "Name": "RewardBasedVideoAd",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 288,
+          "Name": "AdLoaderClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 289,
+          "Name": "EndpointDiscoveryListenerHelper",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 290,
+          "Name": "PlayerManager",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 291,
+          "Name": "testZip",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 292,
+          "Name": "AdSize",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 293,
+          "Name": "LeaderboardManager",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 294,
+          "Name": "EventManager",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 295,
+          "Name": "PlayerSelectUIResponse",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 296,
+          "Name": "ConnectionRequest",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 297,
+          "Name": "INearbyConnectionClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 298,
+          "Name": "NativeRealtimeMultiplayerClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 299,
+          "Name": "BannerClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 300,
+          "Name": "StatsManager",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 301,
+          "Name": "CommonStatusCodes",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 302,
+          "Name": "GPGSCalls",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 303,
+          "Name": "Logger",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 304,
+          "Name": "NativeTurnBasedMatch",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 305,
+          "Name": "NativeQuest",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 306,
+          "Name": "InternalHooks",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 307,
+          "Name": "AdLoaderClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 308,
+          "Name": "CreaseShading",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 309,
+          "Name": "NativeAppIdentifier",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 310,
+          "Name": "NativeExpressAdClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 311,
+          "Name": "IEventsClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 312,
+          "Name": "LocalizedText",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 313,
+          "Name": "VignetteAndChromaticAberration",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 314,
+          "Name": "ObjectTypeFromMass",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 315,
+          "Name": "SL_NGUISpriteName",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 316,
+          "Name": "Utils",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 317,
+          "Name": "Tonemapping",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 318,
+          "Name": "MatchOutcome",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 319,
+          "Name": "PlayGamesAchievement",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 320,
+          "Name": "NativeExpressAdClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 321,
+          "Name": "Leaderboard",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 322,
+          "Name": "ColorCorrectionRamp",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 323,
+          "Name": "ContrastStretch",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 324,
+          "Name": "PlanetSelect",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 325,
+          "Name": "Misc",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 326,
+          "Name": "Player",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 327,
+          "Name": "MultiplayerParticipant",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 328,
+          "Name": "MapLoader",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 329,
+          "Name": "SnapshotMetadataChange",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 330,
+          "Name": "UnsupportedSavedGamesClient",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 331,
+          "Name": "NativeEndpointDiscoveryListenerHelper",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 332,
+          "Name": "TurnBasedMatchConfig",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 333,
+          "Name": "ImageEffectBase",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 334,
+          "Name": "QuestManager",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 335,
+          "Name": "AchievementManager",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 336,
+          "Name": "NativeConnectionRequest",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 337,
+          "Name": "lzip",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 338,
+          "Name": "ICustomInAppPurchaseProcessor",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 339,
+          "Name": "NearbyConnectionClientFactory",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 340,
+          "Name": "NetworkManagerHUD",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 341,
+          "Name": "NetworkLobbyPlayer",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 342,
+          "Name": "NetworkIdentity",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 343,
+          "Name": "Graphic",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 344,
+          "Name": "UIBehaviour",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 345,
+          "Name": "InputField",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 346,
+          "Name": "Text",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 347,
+          "Name": "HorizontalOrVerticalLayoutGroup",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 348,
+          "Name": "Dropdown",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 349,
+          "Name": "StandaloneInputModule",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 350,
+          "Name": "NetworkMigrationManager",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 351,
+          "Name": "NetworkProximityChecker",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 352,
+          "Name": "VerticalLayoutGroup",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 353,
+          "Name": "GraphicRaycaster",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 354,
+          "Name": "ScrollRect",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 355,
+          "Name": "GameObserver",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 356,
+          "Name": "Button",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 357,
+          "Name": "Shadow",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 358,
+          "Name": "NetworkAnimator",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 359,
+          "Name": "BaseMeshEffect",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 360,
+          "Name": "LayoutElement",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 361,
+          "Name": "ContentSizeFitter",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 362,
+          "Name": "PositionAsUV1",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 363,
+          "Name": "LocalizedAudioSource",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 364,
+          "Name": "CanvasScaler",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 365,
+          "Name": "TouchInputModule",
+          "Type": "MonoScript"
+        },
+        {
+          "PathID": 366,
+          "Name": "Toggle",
+          "Type": "MonoScript"
+        }
+      ]
+    },
+    {
+      "Name": "level0",
+      "Assets": [
+        {
+          "PathID": 1,
+          "Name": "",
+          "Type": "Mesh"
+        },
+        {
+          "PathID": 2,
+          "Name": "",
+          "Type": "Mesh"
+        },
+        {
+          "PathID": 3,
+          "Name": "",
+          "Type": "Mesh"
+        }
+      ]
+    },
+    {
+      "Name": "globalgamemanagers",
+      "Assets": []
+    }
+  ]
+}
