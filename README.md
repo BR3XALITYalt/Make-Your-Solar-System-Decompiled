@@ -1,5 +1,6 @@
 # Make Your Solar System: Decompiled
 W.I.P Decompilation of a certain planet game.  
+  
 Join our community:
 * **Discord:** [https://discord.gg/zFCwRWkkUg](https://discord.gg/s6wCStXyXM)  
 ## Project opening requirements  
