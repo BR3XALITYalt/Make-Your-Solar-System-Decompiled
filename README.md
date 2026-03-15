@@ -1,5 +1,7 @@
 # Make Your Solar System: Decompiled
 W.I.P Decompilation of a certain planet game.  
+Join our community:
+* **Discord:** [https://discord.gg/zFCwRWkkUg](https://discord.gg/s6wCStXyXM)  
 ## Project opening requirements  
 **NOTE: Currently the game is in an unplayable state! If you dare to fix it, you can try.**  
 You need unity 2018.4.36f1.  
