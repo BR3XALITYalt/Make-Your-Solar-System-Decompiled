@@ -11,16 +11,42 @@ public class DrawPlanetVector : MonoBehaviour
 	private void Start()
 	{
 		getGameController();
+		if (drawSpeedLine == null)
+		{
+			Transform vectorLine = base.transform.Find("VectorLine");
+			if (vectorLine != null)
+			{
+				drawSpeedLine = vectorLine.GetComponent<LineRenderer>();
+			}
+		}
+		if (drawSpeedPointer == null)
+		{
+			Transform vectorPointer = base.transform.Find("VectorPointer");
+			if (vectorPointer != null)
+			{
+				drawSpeedPointer = vectorPointer.GetComponent<LineRenderer>();
+			}
+		}
+		if (drawSpeedLine == null || drawSpeedPointer == null)
+		{
+			Debug.LogWarning("DrawPlanetVector is missing line renderer references.");
+			Object.Destroy(base.gameObject);
+			return;
+		}
 		float num = Camera.main.orthographicSize / 400f;
-		base.transform.Find("VectorLine").GetComponent<LineRenderer>().SetWidth(8f * num, 8f * num);
-		LineRenderer component = base.transform.Find("VectorPointer").GetComponent<LineRenderer>();
-		component.SetWidth(23.1f * num, 0f);
-		component.SetPosition(0, new Vector3(0f, -10f * num, 0f));
-		component.SetPosition(1, new Vector3(0f, 10f * num, 0f));
+		drawSpeedLine.SetWidth(8f * num, 8f * num);
+		drawSpeedPointer.SetWidth(23.1f * num, 0f);
+		drawSpeedPointer.SetPosition(0, new Vector3(0f, -10f * num, 0f));
+		drawSpeedPointer.SetPosition(1, new Vector3(0f, 10f * num, 0f));
 	}
 
 	private void Update()
 	{
+		if (gc == null || drawSpeedLine == null || drawSpeedPointer == null)
+		{
+			Object.Destroy(base.gameObject);
+			return;
+		}
 		if (!gc.GetGameOver())
 		{
 			if (gc.GetCreatingPlanet())

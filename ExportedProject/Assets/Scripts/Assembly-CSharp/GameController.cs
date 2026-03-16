@@ -205,8 +205,15 @@ public class GameController : MonoBehaviour
 	private void Start()
 	{
 		Screen.sleepTimeout = -1;
-		cantCreatePlanetSound = GetComponents<AudioSource>()[1];
-		StartCoroutine(LoopMusic());
+		AudioSource[] audioSources = GetComponents<AudioSource>();
+		if (audioSources.Length > 1)
+		{
+			cantCreatePlanetSound = audioSources[1];
+		}
+		if (musicClips != null && musicClips.Length > 0 && audioSources.Length > 0)
+		{
+			StartCoroutine(LoopMusic());
+		}
 		gameOver = true;
 		LoadPlayerPrefs();
 		if (langCode == string.Empty)
@@ -240,13 +247,21 @@ public class GameController : MonoBehaviour
 		frameRealistic.SetActive(!minimalistic);
 		frameMinimalistic.SetActive(minimalistic);
 		GameObject.Find("GameBackground").GetComponent<MeshRenderer>().material = ((!minimalistic) ? realisticBackground : flatBackground);
-		optionsSliders[0].value = ((!PlayerPrefs.HasKey("TrailLength")) ? 5 : PlayerPrefs.GetInt("TrailLength"));
-		optionsSliders[1].value = ((!PlayerPrefs.HasKey("TrailSize")) ? 50 : PlayerPrefs.GetInt("TrailSize"));
-		optionsSliders[2].value = ((!PlayerPrefs.HasKey("TrailOpacity")) ? 50 : PlayerPrefs.GetInt("TrailOpacity"));
-		optionsSliders[3].value = ((!PlayerPrefs.HasKey("FrontierOpacity")) ? 100 : PlayerPrefs.GetInt("FrontierOpacity"));
-		optionsSliders[4].value = (float)((!PlayerPrefs.HasKey("SoundVolume")) ? 80 : PlayerPrefs.GetInt("SoundVolume")) / 100f;
-		optionsSliders[5].value = (float)((!PlayerPrefs.HasKey("MusicVolume")) ? 20 : PlayerPrefs.GetInt("MusicVolume")) / 100f;
+		SetSliderValue(0, (!PlayerPrefs.HasKey("TrailLength")) ? 5f : PlayerPrefs.GetInt("TrailLength"));
+		SetSliderValue(1, (!PlayerPrefs.HasKey("TrailSize")) ? 50f : PlayerPrefs.GetInt("TrailSize"));
+		SetSliderValue(2, (!PlayerPrefs.HasKey("TrailOpacity")) ? 50f : PlayerPrefs.GetInt("TrailOpacity"));
+		SetSliderValue(3, (!PlayerPrefs.HasKey("FrontierOpacity")) ? 100f : PlayerPrefs.GetInt("FrontierOpacity"));
+		SetSliderValue(4, (float)((!PlayerPrefs.HasKey("SoundVolume")) ? 80 : PlayerPrefs.GetInt("SoundVolume")) / 100f);
+		SetSliderValue(5, (float)((!PlayerPrefs.HasKey("MusicVolume")) ? 20 : PlayerPrefs.GetInt("MusicVolume")) / 100f);
 		langCode = ((!PlayerPrefs.HasKey("LangCode")) ? string.Empty : PlayerPrefs.GetString("LangCode"));
+	}
+
+	private void SetSliderValue(int index, float value)
+	{
+		if (optionsSliders != null && index >= 0 && index < optionsSliders.Length && optionsSliders[index] != null)
+		{
+			optionsSliders[index].value = value;
+		}
 	}
 
 	public void ChangeLanguage(string languageCode)
@@ -784,7 +799,12 @@ public class GameController : MonoBehaviour
 		}
 		maxPlayerScoreForCurrentMode = -1;
 		score = 0;
-		scoreText.GetComponent<Text>().text = string.Format(LanguageManager.Instance.GetTextValue("Score"), 0);
+		string scoreFormat = LanguageManager.Instance.GetTextValue("Score");
+		if (string.IsNullOrEmpty(scoreFormat))
+		{
+			scoreFormat = "Score: {0}";
+		}
+		scoreText.GetComponent<Text>().text = string.Format(scoreFormat, 0);
 		plusScoreText.GetComponent<Text>().text = string.Empty;
 		minusScoreText.GetComponent<Text>().text = string.Empty;
 		if (currentMap.GetComponent<MapLoader>().hasCountdown)
@@ -809,21 +829,36 @@ public class GameController : MonoBehaviour
 		DeleteObjects();
 		if (currentMap != null)
 			UnityEngine.Object.Destroy(currentMap);
-		currentMap = UnityEngine.Object.Instantiate(maps.transform.Find(newMapName).gameObject);
+		Transform mapTransform = maps.transform.Find(newMapName);
+		if (mapTransform == null)
+		{
+			Debug.LogError("Map not found: " + newMapName);
+			return;
+		}
+		currentMap = UnityEngine.Object.Instantiate(mapTransform.gameObject);
 		CopyMapToSandbox();
 		DelayedNormalizePlanetsSpeed();
 		currentMap.SetActive(true);
-		Camera.main.GetComponent<CameraControl>().minZoom = currentMap.GetComponent<MapLoader>().minimumZoom;
+		CameraControl cameraControl = Camera.main.GetComponent<CameraControl>();
+		MapLoader mapLoader = currentMap.GetComponent<MapLoader>();
+		cameraControl.minZoom = mapLoader.minimumZoom;
 		if (mapZoom)
 		{
-			Camera.main.GetComponent<CameraControl>().zoomSlider.GetComponent<Slider>().value = currentMap.GetComponent<MapLoader>().initialSliderZoom;
+			if (cameraControl.zoomSlider != null)
+			{
+				Slider zoomSliderComponent = cameraControl.zoomSlider.GetComponent<Slider>();
+				if (zoomSliderComponent != null)
+				{
+					zoomSliderComponent.value = mapLoader.initialSliderZoom;
+				}
+			}
 			Camera.main.transform.position = new Vector3(0f, 0f, Camera.main.transform.position.z);
 		}
-		gravityFactor = currentMap.GetComponent<MapLoader>().mapGravityFactor;
+		gravityFactor = mapLoader.mapGravityFactor;
 		Transform transform = barycenter.transform.Find("Playable Region");
-		int playableRegionRadius = currentMap.GetComponent<MapLoader>().playableRegionRadius;
+		int playableRegionRadius = mapLoader.playableRegionRadius;
 		transform.localScale = new Vector3(playableRegionRadius, playableRegionRadius);
-		float num = currentMap.GetComponent<MapLoader>().initialSliderZoom / 200f;
+		float num = mapLoader.initialSliderZoom / 200f;
 		transform.GetComponentInChildren<LineRenderer>().SetWidth(num, num);
 		Camera.main.GetComponent<CameraControl>().SetCurrentPlayableRegionScale(transform.localScale);
 		barycenter.transform.Find("Outer Playable Region").localScale = transform.localScale * 1.4f;
@@ -882,7 +917,12 @@ public class GameController : MonoBehaviour
 
 	private IEnumerator LoopMusic()
 	{
-		AudioSource music = GetComponents<AudioSource>()[0];
+		AudioSource[] audioSources = GetComponents<AudioSource>();
+		if (audioSources.Length == 0 || musicClips == null || musicClips.Length == 0)
+		{
+			yield break;
+		}
+		AudioSource music = audioSources[0];
 		while (true)
 		{
 			music.clip = musicClips[UnityEngine.Random.Range(0, musicClips.Length)];
@@ -909,10 +949,13 @@ public class GameController : MonoBehaviour
 						UnityEngine.Object.Instantiate(drawSpeedVector);
 					}
 				}
-				else if (Input.mousePosition.x > (float)Camera.main.pixelWidth * GetLeftSideBarRelativeWidth())
-				{
-					cantCreatePlanetSound.Play();
-				}
+					else if (Input.mousePosition.x > (float)Camera.main.pixelWidth * GetLeftSideBarRelativeWidth())
+					{
+						if (cantCreatePlanetSound != null)
+						{
+							cantCreatePlanetSound.Play();
+						}
+					}
 			}
 			else if (creatingPlanet && Input.GetButtonUp("Fire1"))
 			{

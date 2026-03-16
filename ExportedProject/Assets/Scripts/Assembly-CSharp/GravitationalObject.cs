@@ -94,6 +94,11 @@ public class GravitationalObject : MonoBehaviour
 			base.transform.position = Camera.main.ScreenToWorldPoint(pos);
 		}
 		getGameController();
+		if (gc == null)
+		{
+			enabled = false;
+			return;
+		}
 		InitializeSounds();
 		if (objectType != "neutron" && objectType != "blackHole")
 		{
@@ -116,6 +121,12 @@ public class GravitationalObject : MonoBehaviour
 		}
 		GetComponent<Rigidbody2D>().AddForce(initialMovement * mass);
 		GameObject surface = GetSurface();
+		if (surface == null)
+		{
+			Debug.LogWarning("GravitationalObject is missing surface object.");
+			enabled = false;
+			return;
+		}
 		setSize();
 		planetColor = Color.gray;
 		if ((initialMovement.magnitude > 200000f && size < 25f) || (initialMovement.magnitude > 500000f && size < 75f) || initialMovement.magnitude > 2000000f)
@@ -135,7 +146,9 @@ public class GravitationalObject : MonoBehaviour
 			}
 			else
 			{
-				string value = Regex.Match(surface.GetComponent<Renderer>().material.mainTexture.name, "\\d+").Value;
+					Renderer surfaceRenderer = surface.GetComponent<Renderer>();
+					string textureName = (surfaceRenderer != null && surfaceRenderer.material != null && surfaceRenderer.material.mainTexture != null) ? surfaceRenderer.material.mainTexture.name : string.Empty;
+					string value = Regex.Match(textureName, "\\d+").Value;
 				if (value != string.Empty)
 				{
 					numTexture = int.Parse(value);
@@ -179,14 +192,26 @@ public class GravitationalObject : MonoBehaviour
 	private void InitializeSounds()
 	{
 		AudioSource[] componentsInChildren = GetComponentsInChildren<AudioSource>();
-		crashyExplosion = componentsInChildren[0];
-		lowPitchFastExplosion = componentsInChildren[1];
-		lowPitchSlowExplosion = componentsInChildren[2];
-		objectOutOfSpace = componentsInChildren[3];
-		crashyExplosion.volume = 0.3f * gc.GetSoundVolume();
-		lowPitchFastExplosion.volume = 0.6f * gc.GetSoundVolume();
-		lowPitchSlowExplosion.volume = gc.GetSoundVolume();
-		objectOutOfSpace.volume = gc.GetSoundVolume();
+		if (componentsInChildren.Length > 0)
+		{
+			crashyExplosion = componentsInChildren[0];
+			crashyExplosion.volume = 0.3f * gc.GetSoundVolume();
+		}
+		if (componentsInChildren.Length > 1)
+		{
+			lowPitchFastExplosion = componentsInChildren[1];
+			lowPitchFastExplosion.volume = 0.6f * gc.GetSoundVolume();
+		}
+		if (componentsInChildren.Length > 2)
+		{
+			lowPitchSlowExplosion = componentsInChildren[2];
+			lowPitchSlowExplosion.volume = gc.GetSoundVolume();
+		}
+		if (componentsInChildren.Length > 3)
+		{
+			objectOutOfSpace = componentsInChildren[3];
+			objectOutOfSpace.volume = gc.GetSoundVolume();
+		}
 	}
 
 	public IEnumerator delayedColorUpdate()
@@ -455,6 +480,10 @@ public class GravitationalObject : MonoBehaviour
 
 	private void SetObjectSurface(float mass)
 	{
+		if (auxStar == null)
+		{
+			return;
+		}
 		if (objectType != "brownDwarf" && mass < (float)minFusionStarMass && mass > (float)maxPlanetMass)
 		{
 			GameObject gameObject = UnityEngine.Object.Instantiate(auxStar, base.transform.position, base.transform.rotation) as GameObject;
@@ -550,6 +579,10 @@ public class GravitationalObject : MonoBehaviour
 		{
 			transform = base.transform.Find("starSurface");
 		}
+		if (transform == null)
+		{
+			return null;
+		}
 		return transform.gameObject;
 	}
 
@@ -589,7 +622,10 @@ public class GravitationalObject : MonoBehaviour
 
 	private void setSize()
 	{
-		size = Mathf.Log10(GetComponent<Rigidbody2D>().mass * (float)gc.planetMassFactor);
+		float massForSize = GetComponent<Rigidbody2D>().mass;
+		float massFactor = Mathf.Max(gc.planetMassFactor, 1);
+		float safeMass = Mathf.Max(massForSize * massFactor, 0.0001f);
+		size = Mathf.Log10(safeMass);
 		size = Mathf.Pow(size, 3f);
 		size /= 16f;
 		size += 1.3f;
@@ -606,6 +642,7 @@ public class GravitationalObject : MonoBehaviour
 		{
 			size /= 5f;
 		}
+		size = Mathf.Max(size, 0.1f);
 		Vector3 localScale = new Vector3(size, size, size);
 		base.transform.localScale = localScale;
 		Transform transform = base.transform.Find("Surface");

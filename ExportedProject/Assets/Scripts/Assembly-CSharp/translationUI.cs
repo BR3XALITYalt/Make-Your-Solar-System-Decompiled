@@ -25,10 +25,23 @@ public class translationUI : MonoBehaviour
 
 	public void TranslateUItext()
 	{
+		Text textComponent = GetComponent<Text>();
+		if (textComponent == null)
+		{
+			return;
+		}
 		if (keyForLocalization == string.Empty)
 		{
-			keyForLocalization = GetComponent<Text>().text;
+			keyForLocalization = textComponent.text;
 		}
-		GetComponent<Text>().text = LanguageManager.Instance.GetTextValue(keyForLocalization);
+		if (LanguageManager.Instance == null)
+		{
+			return;
+		}
+		string translatedValue = LanguageManager.Instance.GetTextValue(keyForLocalization);
+		if (!string.IsNullOrEmpty(translatedValue))
+		{
+			textComponent.text = translatedValue;
+		}
 	}
 }

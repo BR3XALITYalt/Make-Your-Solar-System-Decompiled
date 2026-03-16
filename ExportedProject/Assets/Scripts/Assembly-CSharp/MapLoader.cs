@@ -68,11 +68,41 @@ public class MapLoader : MonoBehaviour
 	private void Start()
 	{
 		getGameController();
-		massSlider.GetComponent<Slider>().maxValue = maximumMass;
-		massSlider.GetComponent<Slider>().value = initialSliderMass;
-		massSlider.GetComponent<Slider>().minValue = minimumMass;
-		zoomSlider.GetComponent<Slider>().maxValue = minimumZoom;
-		zoomSlider.GetComponent<Slider>().value = initialSliderZoom;
+		if (massSlider == null)
+		{
+			Transform massSliderTransform = transform.Find("MassSlider");
+			if (massSliderTransform != null)
+			{
+				massSlider = massSliderTransform.gameObject;
+			}
+		}
+		if (zoomSlider == null)
+		{
+			Transform zoomSliderTransform = transform.Find("CameraSlider");
+			if (zoomSliderTransform != null)
+			{
+				zoomSlider = zoomSliderTransform.gameObject;
+			}
+		}
+		if (massSlider != null)
+		{
+			Slider massSliderComponent = massSlider.GetComponent<Slider>();
+			if (massSliderComponent != null)
+			{
+				massSliderComponent.maxValue = maximumMass;
+				massSliderComponent.value = initialSliderMass;
+				massSliderComponent.minValue = minimumMass;
+			}
+		}
+		if (zoomSlider != null)
+		{
+			Slider zoomSliderComponent = zoomSlider.GetComponent<Slider>();
+			if (zoomSliderComponent != null)
+			{
+				zoomSliderComponent.maxValue = minimumZoom;
+				zoomSliderComponent.value = initialSliderZoom;
+			}
+		}
 		if (isDestroyMode || isSupernovaMode)
 		{
 			int num = planetNamesToDestroy.Count();

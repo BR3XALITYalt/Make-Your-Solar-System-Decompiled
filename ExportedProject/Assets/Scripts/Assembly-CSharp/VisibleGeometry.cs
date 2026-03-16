@@ -15,6 +15,16 @@ public class VisibleGeometry : MonoBehaviour
 
 	private void Start()
 	{
+		if (line == null)
+		{
+			line = GetComponent<LineRenderer>();
+		}
+		if (line == null)
+		{
+			Debug.LogWarning("VisibleGeometry requires a LineRenderer reference.");
+			enabled = false;
+			return;
+		}
 		line.SetVertexCount(segments + 1);
 		line.useWorldSpace = false;
 		CreatePoints();
