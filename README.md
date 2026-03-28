@@ -1,6 +1,6 @@
 # Make Your Solar System: Decompiled
 A Decompilation of a certain planet game.  
-  
+* **Discord:** [https://discord.gg/zFCwRWkkUg](https://discord.gg/s6wCStXyXM)  
 ## Project opening requirements  
 You need unity 2018.4.0f1.  
 The original game was made in unity 5.3.4f1, but i had to use 2018 because 5 kept crashing.
