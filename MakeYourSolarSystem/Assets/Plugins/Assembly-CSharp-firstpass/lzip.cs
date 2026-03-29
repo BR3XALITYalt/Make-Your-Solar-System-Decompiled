@@ -1,570 +1,539 @@
+// Reference: ICSharpCode_SharpZipLib.dll
+// Add to your .csproj:
+//   <Reference Include="ICSharpCode_SharpZipLib">
+//     <HintPath>path\to\ICSharpCode_SharpZipLib.dll</HintPath>
+//   </Reference>
+
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Runtime.InteropServices;
+using ICSharpCode.SharpZipLib.GZip;
+using ICSharpCode.SharpZipLib.Zip;
+using ICSharpCode.SharpZipLib.Zip.Compression;
+using ICSharpCode.SharpZipLib.Zip.Compression.Streams;
 
 public class lzip
 {
-	private const string libname = "zipw";
+    public static List<string> ninfo = new List<string>();
+    public static List<long> uinfo = new List<long>();
+    public static List<long> cinfo = new List<long>();
+    public static int zipFiles = 0;
+    public static int zipFolders = 0;
+    public static int cProgress = 0;
 
-	public static List<string> ninfo = new List<string>();
+    // -------------------------------------------------------------------------
+    // Archive inspection
+    // -------------------------------------------------------------------------
 
-	public static List<long> uinfo = new List<long>();
+    public static int getTotalFiles(string zipArchive, byte[] FileBuffer = null)
+    {
+        ZipFile zf = FileBuffer != null
+            ? new ZipFile(new MemoryStream(FileBuffer))
+            : new ZipFile(zipArchive);
 
-	public static List<long> cinfo = new List<long>();
+        try { return (int)zf.Count; }
+        finally { zf.Close(); }
+    }
 
-	public static int zipFiles;
+    public static long getFileInfo(string zipArchive, string path, byte[] FileBuffer = null)
+    {
+        ninfo.Clear();
+        uinfo.Clear();
+        cinfo.Clear();
+        zipFiles = 0;
+        zipFolders = 0;
 
-	public static int zipFolders;
+        ZipFile zf = null;
+        try
+        {
+            zf = FileBuffer != null
+                ? new ZipFile(new MemoryStream(FileBuffer))
+                : new ZipFile(zipArchive);
 
-	public static int cProgress = 0;
+            string prefix = (path ?? "").Replace('\\', '/').TrimStart('/');
+            long total = 0L;
 
-	[DllImport("zipw")]
-	internal static extern int zsetPermissions(string filePath, string _user, string _group, string _other);
+            foreach (ZipEntry entry in zf)
+            {
+                string name = entry.Name.Replace('\\', '/');
 
-	[DllImport("zipw")]
-	internal static extern int zipGetTotalFiles(string zipArchive, IntPtr FileBuffer, int fileBufferLength);
+                if (prefix.Length > 0 &&
+                    !name.StartsWith(prefix, StringComparison.OrdinalIgnoreCase))
+                    continue;
 
-	[DllImport("zipw")]
-	internal static extern int zipGetInfo(string zipArchive, string path, IntPtr FileBuffer, int fileBufferLength);
+                long uSize = entry.Size;
+                long cSize = entry.CompressedSize;
 
-	[DllImport("zipw")]
-	internal static extern void releaseBuffer(IntPtr buffer);
+                ninfo.Add(name);
+                uinfo.Add(uSize);
+                cinfo.Add(cSize);
+                total += uSize;
 
-	[DllImport("zipw")]
-	internal static extern int zipGetEntrySize(string zipArchive, string entry, IntPtr FileBuffer, int fileBufferLength);
+                if (entry.IsDirectory) zipFolders++;
+                else zipFiles++;
+            }
 
-	[DllImport("zipw")]
-	internal static extern int zipCD(int levelOfCompression, string zipArchive, string inFilePath, string fileName, string comment);
+            return total;
+        }
+        catch { return -1L; }
+        finally
+        {
+            if (zf != null) zf.Close();
+        }
+    }
 
-	[DllImport("zipw")]
-	internal static extern bool zipBuf2File(int levelOfCompression, string zipArchive, string arc_filename, IntPtr buffer, int bufferSize);
+    public static int getEntrySize(string zipArchive, string entry, byte[] FileBuffer = null)
+    {
+        ZipFile zf = null;
+        try
+        {
+            zf = FileBuffer != null
+                ? new ZipFile(new MemoryStream(FileBuffer))
+                : new ZipFile(zipArchive);
 
-	[DllImport("zipw")]
-	internal static extern bool zipEntry2Buffer(string zipArchive, string entry, IntPtr buffer, int bufferSize, IntPtr FileBuffer, int fileBufferLength);
+            ZipEntry ze = zf.GetEntry(entry);
+            return ze == null ? -1 : (int)ze.Size;
+        }
+        catch { return -1; }
+        finally
+        {
+            if (zf != null) zf.Close();
+        }
+    }
 
-	[DllImport("zipw")]
-	internal static extern IntPtr zipCompressBuffer(IntPtr source, int sourceLen, int levelOfCompression, ref int v);
+    // -------------------------------------------------------------------------
+    // Buffer compress / decompress  (raw Deflate)
+    // -------------------------------------------------------------------------
 
-	[DllImport("zipw")]
-	internal static extern IntPtr zipDecompressBuffer(IntPtr source, int sourceLen, ref int v);
+    public static bool compressBuffer(byte[] source, ref byte[] outBuffer, int levelOfCompression)
+    {
+        byte[] result = compressBuffer(source, levelOfCompression);
+        if (result == null) return false;
+        outBuffer = result;
+        return true;
+    }
 
-	[DllImport("zipw")]
-	internal static extern int zipEX(string zipArchive, string outPath, IntPtr progress, IntPtr FileBuffer, int fileBufferLength, IntPtr proc);
+    public static int compressBufferFixed(byte[] source, ref byte[] outBuffer,
+                                          int levelOfCompression, bool safe = true)
+    {
+        byte[] result = compressBuffer(source, levelOfCompression);
+        if (result == null) return 0;
+        if (result.Length > outBuffer.Length)
+        {
+            if (safe) return 0;
+            Buffer.BlockCopy(result, 0, outBuffer, 0, outBuffer.Length);
+            return outBuffer.Length;
+        }
+        Buffer.BlockCopy(result, 0, outBuffer, 0, result.Length);
+        return result.Length;
+    }
 
-	[DllImport("zipw")]
-	internal static extern int zipEntry(string zipArchive, string arc_filename, string outpath, IntPtr FileBuffer, int fileBufferLength, IntPtr proc);
+    public static byte[] compressBuffer(byte[] source, int levelOfCompression)
+    {
+        int level = Clamp(levelOfCompression, 0, 9);
+        MemoryStream ms = new MemoryStream();
+        DeflaterOutputStream dos = new DeflaterOutputStream(ms, new Deflater(level));
+        try
+        {
+            dos.Write(source, 0, source.Length);
+            dos.Finish();
+            return ms.ToArray();
+        }
+        catch { return null; }
+        finally
+        {
+            dos.Close();
+            ms.Close();
+        }
+    }
 
-	[DllImport("zipw")]
-	internal static extern int zipGzip(IntPtr source, int sourceLen, IntPtr outBuffer, int levelOfCompression, bool addHeader, bool addFooter);
+    public static bool decompressBuffer(byte[] source, ref byte[] outBuffer)
+    {
+        byte[] result = decompressBuffer(source);
+        if (result == null) return false;
+        outBuffer = result;
+        return true;
+    }
 
-	[DllImport("zipw")]
-	internal static extern int zipUnGzip(IntPtr source, int sourceLen, IntPtr outBuffer, int outLen, bool hasHeader, bool hasFooter);
+    public static int decompressBufferFixed(byte[] source, ref byte[] outBuffer, bool safe = true)
+    {
+        byte[] result = decompressBuffer(source);
+        if (result == null) return 0;
+        if (result.Length > outBuffer.Length)
+        {
+            if (safe) return 0;
+            Buffer.BlockCopy(result, 0, outBuffer, 0, outBuffer.Length);
+            return outBuffer.Length;
+        }
+        Buffer.BlockCopy(result, 0, outBuffer, 0, result.Length);
+        return result.Length;
+    }
 
-	[DllImport("zipw")]
-	internal static extern int zipUnGzip2(IntPtr source, int sourceLen, IntPtr outBuffer, int outLen);
+    public static byte[] decompressBuffer(byte[] source)
+    {
+        MemoryStream ms = new MemoryStream(source);
+        InflaterInputStream iis = new InflaterInputStream(ms);
+        MemoryStream output = new MemoryStream();
+        try
+        {
+            byte[] buf = new byte[4096];
+            int read;
+            while ((read = iis.Read(buf, 0, buf.Length)) > 0)
+                output.Write(buf, 0, read);
+            return output.ToArray();
+        }
+        catch { return null; }
+        finally
+        {
+            iis.Close();
+            ms.Close();
+            output.Close();
+        }
+    }
 
-	public static int setFilePermissions(string filePath, string _user, string _group, string _other)
-	{
-		return zsetPermissions(filePath, _user, _group, _other);
-	}
+    // -------------------------------------------------------------------------
+    // Entry <-> buffer
+    // -------------------------------------------------------------------------
 
-	public static int getTotalFiles(string zipArchive, byte[] FileBuffer = null)
-	{
-		if (FileBuffer != null)
-		{
-			GCHandle gCHandle = GCHandle.Alloc(FileBuffer, GCHandleType.Pinned);
-			int result = zipGetTotalFiles(null, gCHandle.AddrOfPinnedObject(), FileBuffer.Length);
-			gCHandle.Free();
-			return result;
-		}
-		return zipGetTotalFiles(zipArchive, IntPtr.Zero, 0);
-	}
+    public static bool entry2Buffer(string zipArchive, string entry,
+                                    ref byte[] buffer, byte[] FileBuffer = null)
+    {
+        byte[] result = entry2Buffer(zipArchive, entry, FileBuffer);
+        if (result == null) return false;
+        buffer = result;
+        return true;
+    }
 
-	public static long getFileInfo(string zipArchive, string path, byte[] FileBuffer = null)
-	{
-		ninfo.Clear();
-		uinfo.Clear();
-		cinfo.Clear();
-		zipFiles = 0;
-		zipFolders = 0;
-		int num;
-		if (FileBuffer != null)
-		{
-			GCHandle gCHandle = GCHandle.Alloc(FileBuffer, GCHandleType.Pinned);
-			num = zipGetInfo(null, path, gCHandle.AddrOfPinnedObject(), FileBuffer.Length);
-			gCHandle.Free();
-		}
-		else
-		{
-			num = zipGetInfo(zipArchive, path, IntPtr.Zero, 0);
-		}
-		switch (num)
-		{
-		case -1:
-			return -1L;
-		case -2:
-			return -2L;
-		case -3:
-			return -3L;
-		default:
-		{
-			string path2 = path + "/uziplog.txt";
-			if (!File.Exists(path2))
-			{
-				return -4L;
-			}
-			StreamReader streamReader = new StreamReader(path2);
-			long result = 0L;
-			long num2 = 0L;
-			string text;
-			while ((text = streamReader.ReadLine()) != null)
-			{
-				string[] array = text.Split('|');
-				if (array != null && array.Length > 0)
-				{
-					ninfo.Add(array[0]);
-					long.TryParse(array[1], out result);
-					num2 += result;
-					uinfo.Add(result);
-					if (result > 0)
-					{
-						zipFiles++;
-					}
-					else
-					{
-						zipFolders++;
-					}
-					long.TryParse(array[2], out result);
-					cinfo.Add(result);
-				}
-			}
-			streamReader.Close();
-			streamReader.Dispose();
-			File.Delete(path2);
-			return num2;
-		}
-		}
-	}
+    public static byte[] entry2Buffer(string zipArchive, string entry, byte[] FileBuffer = null)
+    {
+        ZipFile zf = null;
+        try
+        {
+            zf = FileBuffer != null
+                ? new ZipFile(new MemoryStream(FileBuffer))
+                : new ZipFile(zipArchive);
 
-	public static int getEntrySize(string zipArchive, string entry, byte[] FileBuffer = null)
-	{
-		if (FileBuffer != null)
-		{
-			GCHandle gCHandle = GCHandle.Alloc(FileBuffer, GCHandleType.Pinned);
-			int result = zipGetEntrySize(null, entry, gCHandle.AddrOfPinnedObject(), FileBuffer.Length);
-			gCHandle.Free();
-			return result;
-		}
-		return zipGetEntrySize(zipArchive, entry, IntPtr.Zero, 0);
-	}
+            ZipEntry ze = zf.GetEntry(entry);
+            if (ze == null) return null;
 
-	public static bool compressBuffer(byte[] source, ref byte[] outBuffer, int levelOfCompression)
-	{
-		if (levelOfCompression < 0)
-		{
-			levelOfCompression = 0;
-		}
-		if (levelOfCompression > 10)
-		{
-			levelOfCompression = 10;
-		}
-		GCHandle gCHandle = GCHandle.Alloc(source, GCHandleType.Pinned);
-		int v = 0;
-		IntPtr intPtr = zipCompressBuffer(gCHandle.AddrOfPinnedObject(), source.Length, levelOfCompression, ref v);
-		if (v == 0 || intPtr == IntPtr.Zero)
-		{
-			gCHandle.Free();
-			releaseBuffer(intPtr);
-			return false;
-		}
-		Array.Resize(ref outBuffer, v);
-		Marshal.Copy(intPtr, outBuffer, 0, v);
-		gCHandle.Free();
-		releaseBuffer(intPtr);
-		return true;
-	}
+            Stream s = zf.GetInputStream(ze);
+            MemoryStream ms = new MemoryStream((int)Math.Max(0, ze.Size));
+            try
+            {
+                byte[] buf = new byte[4096];
+                int read;
+                while ((read = s.Read(buf, 0, buf.Length)) > 0)
+                    ms.Write(buf, 0, read);
+                return ms.ToArray();
+            }
+            finally
+            {
+                s.Close();
+                ms.Close();
+            }
+        }
+        catch { return null; }
+        finally
+        {
+            if (zf != null) zf.Close();
+        }
+    }
 
-	public static int compressBufferFixed(byte[] source, ref byte[] outBuffer, int levelOfCompression, bool safe = true)
-	{
-		if (levelOfCompression < 0)
-		{
-			levelOfCompression = 0;
-		}
-		if (levelOfCompression > 10)
-		{
-			levelOfCompression = 10;
-		}
-		GCHandle gCHandle = GCHandle.Alloc(source, GCHandleType.Pinned);
-		int v = 0;
-		IntPtr intPtr = zipCompressBuffer(gCHandle.AddrOfPinnedObject(), source.Length, levelOfCompression, ref v);
-		if (v == 0 || intPtr == IntPtr.Zero)
-		{
-			gCHandle.Free();
-			releaseBuffer(intPtr);
-			return 0;
-		}
-		if (v > outBuffer.Length)
-		{
-			if (safe)
-			{
-				gCHandle.Free();
-				releaseBuffer(intPtr);
-				return 0;
-			}
-			v = outBuffer.Length;
-		}
-		Marshal.Copy(intPtr, outBuffer, 0, v);
-		gCHandle.Free();
-		releaseBuffer(intPtr);
-		return v;
-	}
+    public static bool buffer2File(int levelOfCompression, string zipArchive,
+                                   string arc_filename, byte[] buffer, bool append = false)
+    {
+        if (!append && File.Exists(zipArchive))
+            File.Delete(zipArchive);
 
-	public static byte[] compressBuffer(byte[] source, int levelOfCompression)
-	{
-		if (levelOfCompression < 0)
-		{
-			levelOfCompression = 0;
-		}
-		if (levelOfCompression > 10)
-		{
-			levelOfCompression = 10;
-		}
-		GCHandle gCHandle = GCHandle.Alloc(source, GCHandleType.Pinned);
-		int v = 0;
-		IntPtr intPtr = zipCompressBuffer(gCHandle.AddrOfPinnedObject(), source.Length, levelOfCompression, ref v);
-		if (v == 0 || intPtr == IntPtr.Zero)
-		{
-			gCHandle.Free();
-			releaseBuffer(intPtr);
-			return null;
-		}
-		byte[] array = new byte[v];
-		Marshal.Copy(intPtr, array, 0, v);
-		gCHandle.Free();
-		releaseBuffer(intPtr);
-		return array;
-	}
+        int sharpLevel = Clamp(levelOfCompression, 0, 9);
+        ZipOutputStream zos = new ZipOutputStream(
+            new FileStream(zipArchive,
+                           append ? FileMode.Append : FileMode.Create,
+                           FileAccess.Write));
+        try
+        {
+            zos.SetLevel(sharpLevel);
+            ZipEntry ze = new ZipEntry(arc_filename);
+            ze.DateTime = DateTime.Now;
+            zos.PutNextEntry(ze);
+            zos.Write(buffer, 0, buffer.Length);
+            zos.CloseEntry();
+            return true;
+        }
+        catch { return false; }
+        finally { zos.Close(); }
+    }
 
-	public static bool decompressBuffer(byte[] source, ref byte[] outBuffer)
-	{
-		GCHandle gCHandle = GCHandle.Alloc(source, GCHandleType.Pinned);
-		int v = 0;
-		IntPtr intPtr = zipDecompressBuffer(gCHandle.AddrOfPinnedObject(), source.Length, ref v);
-		if (v == 0 || intPtr == IntPtr.Zero)
-		{
-			gCHandle.Free();
-			releaseBuffer(intPtr);
-			return false;
-		}
-		Array.Resize(ref outBuffer, v);
-		Marshal.Copy(intPtr, outBuffer, 0, v);
-		gCHandle.Free();
-		releaseBuffer(intPtr);
-		return true;
-	}
+    // -------------------------------------------------------------------------
+    // Compress files / directories
+    // -------------------------------------------------------------------------
 
-	public static int decompressBufferFixed(byte[] source, ref byte[] outBuffer, bool safe = true)
-	{
-		GCHandle gCHandle = GCHandle.Alloc(source, GCHandleType.Pinned);
-		int v = 0;
-		IntPtr intPtr = zipDecompressBuffer(gCHandle.AddrOfPinnedObject(), source.Length, ref v);
-		if (v == 0 || intPtr == IntPtr.Zero)
-		{
-			gCHandle.Free();
-			releaseBuffer(intPtr);
-			return 0;
-		}
-		if (v > outBuffer.Length)
-		{
-			if (safe)
-			{
-				gCHandle.Free();
-				releaseBuffer(intPtr);
-				return 0;
-			}
-			v = outBuffer.Length;
-		}
-		Marshal.Copy(intPtr, outBuffer, 0, v);
-		gCHandle.Free();
-		releaseBuffer(intPtr);
-		return v;
-	}
+    public static int compress_File(int levelOfCompression, string zipArchive,
+                                    string inFilePath, bool append = false,
+                                    string fileName = "", string comment = "")
+    {
+        if (!File.Exists(inFilePath)) return -10;
+        if (!append && File.Exists(zipArchive)) File.Delete(zipArchive);
 
-	public static byte[] decompressBuffer(byte[] source)
-	{
-		GCHandle gCHandle = GCHandle.Alloc(source, GCHandleType.Pinned);
-		int v = 0;
-		IntPtr intPtr = zipDecompressBuffer(gCHandle.AddrOfPinnedObject(), source.Length, ref v);
-		if (v == 0 || intPtr == IntPtr.Zero)
-		{
-			gCHandle.Free();
-			releaseBuffer(intPtr);
-			return null;
-		}
-		byte[] array = new byte[v];
-		Marshal.Copy(intPtr, array, 0, v);
-		gCHandle.Free();
-		releaseBuffer(intPtr);
-		return array;
-	}
+        if (fileName == string.Empty)
+            fileName = Path.GetFileName(inFilePath);
 
-	public static bool entry2Buffer(string zipArchive, string entry, ref byte[] buffer, byte[] FileBuffer = null)
-	{
-		int num;
-		if (FileBuffer != null)
-		{
-			GCHandle gCHandle = GCHandle.Alloc(FileBuffer, GCHandleType.Pinned);
-			num = zipGetEntrySize(null, entry, gCHandle.AddrOfPinnedObject(), FileBuffer.Length);
-			gCHandle.Free();
-		}
-		else
-		{
-			num = zipGetEntrySize(zipArchive, entry, IntPtr.Zero, 0);
-		}
-		if (num <= 0)
-		{
-			return false;
-		}
-		Array.Resize(ref buffer, num);
-		GCHandle gCHandle2 = GCHandle.Alloc(buffer, GCHandleType.Pinned);
-		bool result;
-		if (FileBuffer != null)
-		{
-			GCHandle gCHandle3 = GCHandle.Alloc(FileBuffer, GCHandleType.Pinned);
-			result = zipEntry2Buffer(null, entry, gCHandle2.AddrOfPinnedObject(), num, gCHandle3.AddrOfPinnedObject(), FileBuffer.Length);
-			gCHandle3.Free();
-		}
-		else
-		{
-			result = zipEntry2Buffer(zipArchive, entry, gCHandle2.AddrOfPinnedObject(), num, IntPtr.Zero, 0);
-		}
-		gCHandle2.Free();
-		return result;
-	}
+        int sharpLevel = Clamp(levelOfCompression, 0, 9);
 
-	public static byte[] entry2Buffer(string zipArchive, string entry, byte[] FileBuffer = null)
-	{
-		int num;
-		if (FileBuffer != null)
-		{
-			GCHandle gCHandle = GCHandle.Alloc(FileBuffer, GCHandleType.Pinned);
-			num = zipGetEntrySize(null, entry, gCHandle.AddrOfPinnedObject(), FileBuffer.Length);
-			gCHandle.Free();
-		}
-		else
-		{
-			num = zipGetEntrySize(zipArchive, entry, IntPtr.Zero, 0);
-		}
-		if (num <= 0)
-		{
-			return null;
-		}
-		byte[] array = new byte[num];
-		GCHandle gCHandle2 = GCHandle.Alloc(array, GCHandleType.Pinned);
-		bool flag;
-		if (FileBuffer != null)
-		{
-			GCHandle gCHandle3 = GCHandle.Alloc(FileBuffer, GCHandleType.Pinned);
-			flag = zipEntry2Buffer(null, entry, gCHandle2.AddrOfPinnedObject(), num, gCHandle3.AddrOfPinnedObject(), FileBuffer.Length);
-			gCHandle3.Free();
-		}
-		else
-		{
-			flag = zipEntry2Buffer(zipArchive, entry, gCHandle2.AddrOfPinnedObject(), num, IntPtr.Zero, 0);
-		}
-		gCHandle2.Free();
-		if (!flag)
-		{
-			return null;
-		}
-		return array;
-	}
+        ZipOutputStream zos = new ZipOutputStream(
+            new FileStream(zipArchive,
+                           append ? FileMode.Append : FileMode.Create,
+                           FileAccess.Write));
+        try
+        {
+            zos.SetLevel(sharpLevel);
+            if (!string.IsNullOrEmpty(comment)) zos.SetComment(comment);
 
-	public static bool buffer2File(int levelOfCompression, string zipArchive, string arc_filename, byte[] buffer, bool append = false)
-	{
-		if (!append && File.Exists(zipArchive))
-		{
-			File.Delete(zipArchive);
-		}
-		GCHandle gCHandle = GCHandle.Alloc(buffer, GCHandleType.Pinned);
-		if (levelOfCompression < 0)
-		{
-			levelOfCompression = 0;
-		}
-		if (levelOfCompression > 10)
-		{
-			levelOfCompression = 10;
-		}
-		bool result = zipBuf2File(levelOfCompression, zipArchive, arc_filename, gCHandle.AddrOfPinnedObject(), buffer.Length);
-		gCHandle.Free();
-		return result;
-	}
+            ZipEntry ze = new ZipEntry(fileName);
+            ze.DateTime = File.GetLastWriteTime(inFilePath);
+            zos.PutNextEntry(ze);
 
-	public static int extract_entry(string zipArchive, string arc_filename, string outpath, byte[] FileBuffer = null, int[] proc = null)
-	{
-		if (!Directory.Exists(Path.GetDirectoryName(outpath)))
-		{
-			return -1;
-		}
-		int num = -1;
-		if (proc == null)
-		{
-			proc = new int[1];
-		}
-		GCHandle gCHandle = GCHandle.Alloc(proc, GCHandleType.Pinned);
-		if (FileBuffer != null)
-		{
-			GCHandle gCHandle2 = GCHandle.Alloc(FileBuffer, GCHandleType.Pinned);
-			num = ((proc == null) ? zipEntry(null, arc_filename, outpath, gCHandle2.AddrOfPinnedObject(), FileBuffer.Length, IntPtr.Zero) : zipEntry(null, arc_filename, outpath, gCHandle2.AddrOfPinnedObject(), FileBuffer.Length, gCHandle.AddrOfPinnedObject()));
-			gCHandle2.Free();
-			gCHandle.Free();
-			return num;
-		}
-		num = ((proc == null) ? zipEntry(zipArchive, arc_filename, outpath, IntPtr.Zero, 0, IntPtr.Zero) : zipEntry(zipArchive, arc_filename, outpath, IntPtr.Zero, 0, gCHandle.AddrOfPinnedObject()));
-		gCHandle.Free();
-		return num;
-	}
+            FileStream fs = File.OpenRead(inFilePath);
+            try
+            {
+                byte[] buf = new byte[4096];
+                int read;
+                while ((read = fs.Read(buf, 0, buf.Length)) > 0)
+                    zos.Write(buf, 0, read);
+            }
+            finally { fs.Close(); }
 
-	public static int decompress_File(string zipArchive, string outPath, int[] progress, byte[] FileBuffer = null, int[] proc = null)
-	{
-		if (outPath.Substring(outPath.Length - 1, 1) != "/")
-		{
-			outPath += "/";
-		}
-		GCHandle gCHandle = GCHandle.Alloc(progress, GCHandleType.Pinned);
-		if (proc == null)
-		{
-			proc = new int[1];
-		}
-		GCHandle gCHandle2 = GCHandle.Alloc(proc, GCHandleType.Pinned);
-		int result;
-		if (FileBuffer != null)
-		{
-			GCHandle gCHandle3 = GCHandle.Alloc(FileBuffer, GCHandleType.Pinned);
-			result = ((proc == null) ? zipEX(null, outPath, gCHandle.AddrOfPinnedObject(), gCHandle3.AddrOfPinnedObject(), FileBuffer.Length, IntPtr.Zero) : zipEX(null, outPath, gCHandle.AddrOfPinnedObject(), gCHandle3.AddrOfPinnedObject(), FileBuffer.Length, gCHandle2.AddrOfPinnedObject()));
-			gCHandle3.Free();
-			gCHandle.Free();
-			gCHandle2.Free();
-			return result;
-		}
-		result = ((proc == null) ? zipEX(zipArchive, outPath, gCHandle.AddrOfPinnedObject(), IntPtr.Zero, 0, IntPtr.Zero) : zipEX(zipArchive, outPath, gCHandle.AddrOfPinnedObject(), IntPtr.Zero, 0, gCHandle2.AddrOfPinnedObject()));
-		gCHandle.Free();
-		gCHandle2.Free();
-		return result;
-	}
+            zos.CloseEntry();
+            return 0;
+        }
+        catch { return -1; }
+        finally { zos.Close(); }
+    }
 
-	public static int compress_File(int levelOfCompression, string zipArchive, string inFilePath, bool append = false, string fileName = "", string comment = "")
-	{
-		if (!append && File.Exists(zipArchive))
-		{
-			File.Delete(zipArchive);
-		}
-		if (!File.Exists(inFilePath))
-		{
-			return -10;
-		}
-		if (fileName == string.Empty)
-		{
-			fileName = Path.GetFileName(inFilePath);
-		}
-		if (levelOfCompression < 0)
-		{
-			levelOfCompression = 0;
-		}
-		if (levelOfCompression > 10)
-		{
-			levelOfCompression = 10;
-		}
-		return zipCD(levelOfCompression, zipArchive, inFilePath, fileName, comment);
-	}
+    public static void compressDir(string sourceDir, int levelOfCompression,
+                                   string zipArchive, bool includeRoot = false)
+    {
+        string dir = sourceDir.Replace('\\', '/').TrimEnd('/');
+        if (!Directory.Exists(dir)) return;
+        if (File.Exists(zipArchive)) File.Delete(zipArchive);
 
-	public static void compressDir(string sourceDir, int levelOfCompression, string zipArchive, bool includeRoot = false)
-	{
-		string text = sourceDir.Replace("\\", "/");
-		if (!Directory.Exists(text))
-		{
-			return;
-		}
-		if (File.Exists(zipArchive))
-		{
-			File.Delete(zipArchive);
-		}
-		string[] array = text.Split('/');
-		string text2 = array[array.Length - 1];
-		string text3 = text2;
-		cProgress = 0;
-		if (levelOfCompression < 0)
-		{
-			levelOfCompression = 0;
-		}
-		if (levelOfCompression > 10)
-		{
-			levelOfCompression = 10;
-		}
-		string[] files = Directory.GetFiles(text, "*", SearchOption.AllDirectories);
-		foreach (string text4 in files)
-		{
-			string text5 = text4.Replace(text, text2).Replace("\\", "/");
-			if (!includeRoot)
-			{
-				text5 = text5.Replace(text3 + "/", string.Empty);
-			}
-			compress_File(levelOfCompression, zipArchive, text4, true, text5, string.Empty);
-			cProgress++;
-		}
-	}
+        string rootName = Path.GetFileName(dir);
+        int sharpLevel = Clamp(levelOfCompression, 0, 9);
+        cProgress = 0;
 
-	public static int getAllFiles(string Dir)
-	{
-		string[] files = Directory.GetFiles(Dir, "*", SearchOption.AllDirectories);
-		int result = files.Length;
-		files = null;
-		return result;
-	}
+        ZipOutputStream zos = new ZipOutputStream(File.Create(zipArchive));
+        try
+        {
+            zos.SetLevel(sharpLevel);
 
-	public static int gzip(byte[] source, byte[] outBuffer, int level, bool addHeader = true, bool addFooter = true)
-	{
-		GCHandle gCHandle = GCHandle.Alloc(source, GCHandleType.Pinned);
-		GCHandle gCHandle2 = GCHandle.Alloc(outBuffer, GCHandleType.Pinned);
-		int num = zipGzip(gCHandle.AddrOfPinnedObject(), source.Length, gCHandle2.AddrOfPinnedObject(), level, addHeader, addFooter);
-		gCHandle.Free();
-		gCHandle2.Free();
-		int num2 = 0;
-		if (addHeader)
-		{
-			num2 += 10;
-		}
-		if (addFooter)
-		{
-			num2 += 8;
-		}
-		return num + num2;
-	}
+            string[] files = Directory.GetFiles(dir, "*", SearchOption.AllDirectories);
+            foreach (string file in files)
+            {
+                string normalised = file.Replace('\\', '/');
+                string arcName = normalised.Replace(dir + "/", rootName + "/");
+                if (!includeRoot)
+                    arcName = arcName.Replace(rootName + "/", string.Empty);
 
-	public static int gzipUncompressedSize(byte[] source)
-	{
-		int num = source.Length;
-		return (source[num - 4] & 0xFF) | ((source[num - 3] & 0xFF) << 8) | ((source[num - 2] & 0xFF) << 16) | ((source[num - 1] & 0xFF) << 24);
-	}
+                ZipEntry ze = new ZipEntry(arcName);
+                ze.DateTime = File.GetLastWriteTime(file);
+                zos.PutNextEntry(ze);
 
-	public static int unGzip(byte[] source, byte[] outBuffer, bool hasHeader = true, bool hasFooter = true)
-	{
-		GCHandle gCHandle = GCHandle.Alloc(source, GCHandleType.Pinned);
-		GCHandle gCHandle2 = GCHandle.Alloc(outBuffer, GCHandleType.Pinned);
-		int result = zipUnGzip(gCHandle.AddrOfPinnedObject(), source.Length, gCHandle2.AddrOfPinnedObject(), outBuffer.Length, hasHeader, hasFooter);
-		gCHandle.Free();
-		gCHandle2.Free();
-		return result;
-	}
+                FileStream fs = File.OpenRead(file);
+                try
+                {
+                    byte[] buf = new byte[4096];
+                    int read;
+                    while ((read = fs.Read(buf, 0, buf.Length)) > 0)
+                        zos.Write(buf, 0, read);
+                }
+                finally { fs.Close(); }
 
-	public static int unGzip2(byte[] source, byte[] outBuffer)
-	{
-		GCHandle gCHandle = GCHandle.Alloc(source, GCHandleType.Pinned);
-		GCHandle gCHandle2 = GCHandle.Alloc(outBuffer, GCHandleType.Pinned);
-		int result = zipUnGzip2(gCHandle.AddrOfPinnedObject(), source.Length, gCHandle2.AddrOfPinnedObject(), outBuffer.Length);
-		gCHandle.Free();
-		gCHandle2.Free();
-		return result;
-	}
+                zos.CloseEntry();
+                cProgress++;
+            }
+        }
+        catch { }
+        finally { zos.Close(); }
+    }
+
+    // -------------------------------------------------------------------------
+    // Extract
+    // -------------------------------------------------------------------------
+
+    public static int extract_entry(string zipArchive, string arc_filename,
+                                    string outpath, byte[] FileBuffer = null,
+                                    int[] proc = null)
+    {
+        string dir = Path.GetDirectoryName(outpath);
+        if (!string.IsNullOrEmpty(dir) && !Directory.Exists(dir)) return -1;
+
+        ZipFile zf = null;
+        try
+        {
+            zf = FileBuffer != null
+                ? new ZipFile(new MemoryStream(FileBuffer))
+                : new ZipFile(zipArchive);
+
+            ZipEntry ze = zf.GetEntry(arc_filename);
+            if (ze == null) return -2;
+
+            Stream s = zf.GetInputStream(ze);
+            FileStream fs = File.Create(outpath);
+            try
+            {
+                byte[] buf = new byte[4096];
+                int read;
+                while ((read = s.Read(buf, 0, buf.Length)) > 0)
+                    fs.Write(buf, 0, read);
+            }
+            finally
+            {
+                s.Close();
+                fs.Close();
+            }
+
+            if (proc != null && proc.Length > 0) proc[0] = 100;
+            return 0;
+        }
+        catch { return -1; }
+        finally
+        {
+            if (zf != null) zf.Close();
+        }
+    }
+
+    public static int decompress_File(string zipArchive, string outPath,
+                                      int[] progress, byte[] FileBuffer = null,
+                                      int[] proc = null)
+    {
+        if (!outPath.EndsWith("/")) outPath += "/";
+        Directory.CreateDirectory(outPath);
+
+        ZipFile zf = null;
+        try
+        {
+            zf = FileBuffer != null
+                ? new ZipFile(new MemoryStream(FileBuffer))
+                : new ZipFile(zipArchive);
+
+            int total = (int)zf.Count;
+            int done = 0;
+
+            foreach (ZipEntry entry in zf)
+            {
+                string dest = Path.Combine(outPath,
+                    entry.Name.Replace('/', Path.DirectorySeparatorChar));
+
+                if (entry.IsDirectory)
+                {
+                    Directory.CreateDirectory(dest);
+                }
+                else
+                {
+                    string destDir = Path.GetDirectoryName(dest);
+                    if (!string.IsNullOrEmpty(destDir))
+                        Directory.CreateDirectory(destDir);
+
+                    Stream s = zf.GetInputStream(entry);
+                    FileStream fs = File.Create(dest);
+                    try
+                    {
+                        byte[] buf = new byte[4096];
+                        int read;
+                        while ((read = s.Read(buf, 0, buf.Length)) > 0)
+                            fs.Write(buf, 0, read);
+                    }
+                    finally
+                    {
+                        s.Close();
+                        fs.Close();
+                    }
+                }
+
+                done++;
+                int pct = total > 0 ? (int)((done / (float)total) * 100f) : 100;
+                if (progress != null && progress.Length > 0) progress[0] = pct;
+                if (proc != null && proc.Length > 0) proc[0] = pct;
+            }
+
+            return 0;
+        }
+        catch { return -1; }
+        finally
+        {
+            if (zf != null) zf.Close();
+        }
+    }
+
+    // -------------------------------------------------------------------------
+    // GZip
+    // -------------------------------------------------------------------------
+
+    public static int gzip(byte[] source, byte[] outBuffer, int level,
+                           bool addHeader = true, bool addFooter = true)
+    {
+        level = Clamp(level, 0, 9);
+        MemoryStream ms = new MemoryStream(outBuffer, true);
+        GZipOutputStream gz = new GZipOutputStream(ms);
+        try
+        {
+            gz.SetLevel(level);
+            gz.Write(source, 0, source.Length);
+            gz.Finish();
+            return (int)ms.Position;
+        }
+        catch { return 0; }
+        finally
+        {
+            gz.Close();
+            ms.Close();
+        }
+    }
+
+    public static int gzipUncompressedSize(byte[] source)
+    {
+        int n = source.Length;
+        return (source[n - 4] & 0xFF)
+             | ((source[n - 3] & 0xFF) << 8)
+             | ((source[n - 2] & 0xFF) << 16)
+             | ((source[n - 1] & 0xFF) << 24);
+    }
+
+    public static int unGzip(byte[] source, byte[] outBuffer,
+                             bool hasHeader = true, bool hasFooter = true)
+    {
+        MemoryStream ms = new MemoryStream(source);
+        GZipInputStream gz = new GZipInputStream(ms);
+        try
+        {
+            return gz.Read(outBuffer, 0, outBuffer.Length);
+        }
+        catch { return -1; }
+        finally
+        {
+            gz.Close();
+            ms.Close();
+        }
+    }
+
+    public static int unGzip2(byte[] source, byte[] outBuffer)
+    {
+        return unGzip(source, outBuffer);
+    }
+
+    // -------------------------------------------------------------------------
+    // Helpers
+    // -------------------------------------------------------------------------
+
+    public static int getAllFiles(string Dir)
+    {
+        return Directory.GetFiles(Dir, "*", SearchOption.AllDirectories).Length;
+    }
+
+    private static int Clamp(int value, int min, int max)
+    {
+        if (value < min) return min;
+        if (value > max) return max;
+        return value;
+    }
 }
