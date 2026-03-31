@@ -4,7 +4,7 @@ Decompilation (and enhancement) of a certain planet game.
 Join the Discord server for discussion and more info:
 * **Discord:** [https://discord.gg/zFCwRWkkUg](https://discord.gg/s6wCStXyXM)  
 ## The Goal  
-The whole goal of this project is to finally update, port, and possibly mod this game, because I remember playing it when i was little, and I want to revive it for nostalgic purposes.
+The whole goal of this project is to finally update, port, and possibly mod this game.
 (also because the game hasn't been updated since 2016, and I want to add debug tools like freecam)
 
 ## Project opening requirements  
