@@ -103401,7 +103401,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 222.6, y: -2.699997}
+  m_AnchoredPosition: {x: 222.6, y: -2.6999817}
   m_SizeDelta: {x: -458.9, y: -186.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &3447
@@ -104440,7 +104440,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -10.1024475, y: -3.0998993}
+  m_AnchoredPosition: {x: -10.1024475, y: -3.099884}
   m_SizeDelta: {x: -32, y: -183}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &3499
@@ -109218,13 +109218,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325f5bd7d1e00fc242f44bd972257c60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxObjects: 10
+  MaxObjects: 2147483647
   initialSliderMass: 0.23
   maximumMass: 0.5
   minimumMass: 0
   initialSliderZoom: 4040
   minimumZoom: 5000
-  playableRegionRadius: 10000
+  playableRegionRadius: 2147483647
   hasCountdown: 0
   time: 1
   addsScore: 0
@@ -110553,13 +110553,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325f5bd7d1e00fc242f44bd972257c60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxObjects: 25
+  MaxObjects: 2147147
   initialSliderMass: 0.5
   maximumMass: 1
   minimumMass: 0
   initialSliderZoom: 3000
-  minimumZoom: 30000
-  playableRegionRadius: 56400
+  minimumZoom: 232323
+  playableRegionRadius: 232323
   hasCountdown: 0
   time: 1
   addsScore: 0
@@ -111152,13 +111152,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325f5bd7d1e00fc242f44bd972257c60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxObjects: 25
+  MaxObjects: 2147483647
   initialSliderMass: 0.5
   maximumMass: 1
   minimumMass: 0
   initialSliderZoom: 3000
-  minimumZoom: 30000
-  playableRegionRadius: 56400
+  minimumZoom: 232323
+  playableRegionRadius: 232323
   hasCountdown: 0
   time: 1
   addsScore: 0
@@ -111792,8 +111792,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3704}
   m_HandleRect: {fileID: 3172}
   m_Direction: 2
-  m_Value: 0.055880114
-  m_Size: 0.82845426
+  m_Value: 0.055879768
+  m_Size: 0.83208334
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -117339,7 +117339,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 3100}
   m_HandleRect: {fileID: 3230}
   m_Direction: 3
-  m_MinValue: 20
+  m_MinValue: 1
   m_MaxValue: 5000
   m_WholeNumbers: 0
   m_Value: 520
@@ -126287,13 +126287,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325f5bd7d1e00fc242f44bd972257c60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxObjects: 25
+  MaxObjects: 2147483647
   initialSliderMass: 0.5
   maximumMass: 1
   minimumMass: 0
   initialSliderZoom: 2000
-  minimumZoom: 30000
-  playableRegionRadius: 56400
+  minimumZoom: 232323
+  playableRegionRadius: 232323
   hasCountdown: 0
   time: 1
   addsScore: 0
